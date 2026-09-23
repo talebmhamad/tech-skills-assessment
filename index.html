@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technology & Python Skills Challenge</title>
+<style>
+  *{box-sizing:border-box} body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#182235}
+  .wrap{max-width:950px;margin:auto;padding:24px}
+  header{background:white;border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.08);margin-bottom:20px}
+  h1{margin:0 0 8px;font-size:32px} h2{margin-top:0} .sub{color:#5d6b82}
+  .info{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin-top:18px}
+  input,textarea{width:100%;padding:12px;border:1px solid #ccd5e2;border-radius:10px;font:inherit}
+  .section{background:white;border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 6px 22px rgba(0,0,0,.06)}
+  .q{padding:18px 0;border-bottom:1px solid #e9eef5}.q:last-child{border-bottom:0}
+  .q p{font-weight:700;margin:0 0 12px}.option{display:block;padding:8px 10px;margin:5px 0;border-radius:8px}
+  .option:hover{background:#f0f4fa}.option input{width:auto;margin-right:8px}
+  pre{background:#182235;color:#f5f7fa;padding:15px;border-radius:10px;overflow:auto;font-size:14px}
+  textarea{min-height:100px}
+  button{border:0;border-radius:12px;padding:14px 20px;font-size:16px;font-weight:700;cursor:pointer;background:#182235;color:white}
+  #result{display:none;margin-top:20px;padding:22px;background:#eef3f8;border-radius:14px}
+  .score{font-size:32px;font-weight:800}.breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:15px}
+  .box{background:white;padding:14px;border-radius:10px;text-align:center}.small{font-size:13px;color:#68768c}
+  footer{text-align:center;color:#738095;padding:20px}
+  @media(max-width:650px){.info,.breakdown{grid-template-columns:1fr}h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>🚀 Technology & Python Skills Challenge</h1>
+  <div class="sub">Full technology knowledge assessment • Programming, computers, web, games, cybersecurity, AI, problem-solving and independent learning</div>
+</header>
+
+<form id="quiz">
+<section class="section">
+<h2>🌟 Technology Profile — Tell Me What You Know</h2>
+<p class="sub">This section is not about right or wrong answers. Explain what you really know, what you have tried, and what you want to learn. Examples are very helpful.</p>
+
+<div class="q">
+<p>A. What was the last technology or programming project you worked on?</p>
+<textarea name="profile_project" placeholder="What did you build? What problem did it solve? Which language, software, tools or technologies did you use? What parts did YOU make?"></textarea>
+</div>
+
+<div class="q">
+<p>B. How did your last project work?</p>
+<textarea name="profile_project_working" placeholder="Explain how it works from start to finish. For example: What happens when the user starts it? What happens behind the scenes? Where is information stored?"></textarea>
+</div>
+
+<div class="q">
+<p>C. What was the hardest problem in that project, and how did you solve it?</p>
+<textarea name="profile_project_problem" placeholder="Describe the problem, what you tried, what failed, and what finally worked."></textarea>
+</div>
+
+<div class="q">
+<p>D. What was the last technology question or topic you searched for by yourself?</p>
+<textarea name="profile_search" placeholder="What exactly did you search for? Why did you search for it? Where did you look? What new thing did you learn?"></textarea>
+</div>
+
+<div class="q">
+<p>E. What technology topics have you been learning recently without a teacher asking you to?</p>
+<textarea name="profile_learning" placeholder="Videos, websites, coding experiments, documentation, AI tools, projects, hardware, games, security, etc."></textarea>
+</div>
+
+<div class="q">
+<p>F. 🌐 Web Development — What do you know?</p>
+<textarea name="field_web" placeholder="Tell me anything you know about HTML, CSS, JavaScript, frontend, backend, websites, servers, APIs, databases, hosting, domains, or projects you made."></textarea>
+</div>
+
+<div class="q">
+<p>G. 🎮 Game Development — What do you know?</p>
+<textarea name="field_game" placeholder="Have you made a game? Which tools/languages? Tell me what you know about game loops, characters, movement, collision, score, levels, physics, multiplayer, or anything else."></textarea>
+</div>
+
+<div class="q">
+<p>H. 🔐 Cybersecurity — What do you know?</p>
+<textarea name="field_cyber" placeholder="Tell me what you know about passwords, phishing, malware, hacking, encryption, networks, permissions, protecting accounts, or ethical cybersecurity."></textarea>
+</div>
+
+<div class="q">
+<p>I. 🤖 Artificial Intelligence — What do you know?</p>
+<textarea name="field_ai" placeholder="What is AI? How do you think it learns or produces answers? Have you used AI tools or APIs? What do you know about machine learning, models, training data, prompts, or AI projects?"></textarea>
+</div>
+
+<div class="q">
+<p>J. 💻 Software / App Development — What do you know?</p>
+<textarea name="field_dev" placeholder="Tell me about programming languages, apps, algorithms, functions, OOP, debugging, Git, databases, APIs, testing, architecture, or anything else you know."></textarea>
+</div>
+
+<div class="q">
+<p>K. 🖥️ Computers & Hardware — What do you know?</p>
+<textarea name="field_hardware" placeholder="Explain anything you know about CPU, RAM, SSD/storage, GPU, operating systems, files, input/output devices, Arduino, Raspberry Pi, robotics, or computer parts."></textarea>
+</div>
+
+<div class="q">
+<p>L. 🌐 Internet & Networks — What do you know?</p>
+<textarea name="field_network" placeholder="What happens when devices connect to the internet? Tell me anything you know about Wi-Fi, IP addresses, routers, servers, DNS, HTTP/HTTPS, cloud computing, or networks."></textarea>
+</div>
+
+<div class="q">
+<p>M. Which field interests you MOST right now, and why?</p>
+<textarea name="profile_favorite" placeholder="Web development, game development, cybersecurity, AI, software/apps, robotics, hardware, or another field? Why?"></textarea>
+</div>
+
+<div class="q">
+<p>N. If I gave you one month to build any technology project you wanted, what would you build?</p>
+<textarea name="profile_future" placeholder="Describe the idea, features, technologies you would use, what you already know how to build, and what you would need to learn."></textarea>
+</div>
+</section>
+
+<section class="section">
+<h2>💻 Part 1 — Technology Knowledge</h2>
+
+<div class="q" data-cat="tech">
+<p>1. Which part is often called the “brain” of the computer?</p>
+<label class="option"><input type="radio" name="q1" value="a"> RAM</label>
+<label class="option"><input type="radio" name="q1" value="b"> CPU</label>
+<label class="option"><input type="radio" name="q1" value="c"> Keyboard</label>
+<label class="option"><input type="radio" name="q1" value="d"> Monitor</label>
+</div>
+
+<div class="q" data-cat="tech">
+<p>2. What is RAM mainly used for?</p>
+<label class="option"><input type="radio" name="q2" value="a"> Temporary working data while programs are running</label>
+<label class="option"><input type="radio" name="q2" value="b"> Printing documents</label>
+<label class="option"><input type="radio" name="q2" value="c"> Permanent file storage only</label>
+<label class="option"><input type="radio" name="q2" value="d"> Connecting the mouse</label>
+</div>
+
+<div class="q" data-cat="tech">
+<p>3. Which one is an operating system?</p>
+<label class="option"><input type="radio" name="q3" value="a"> Python</label>
+<label class="option"><input type="radio" name="q3" value="b"> Google</label>
+<label class="option"><input type="radio" name="q3" value="c"> Windows</label>
+<label class="option"><input type="radio" name="q3" value="d"> HTML</label>
+</div>
+
+<div class="q" data-cat="tech">
+<p>4. A website works on your computer, but another computer cannot open it. Which is a good FIRST thing to check?</p>
+<label class="option"><input type="radio" name="q4" value="a"> Delete all files</label>
+<label class="option"><input type="radio" name="q4" value="b"> Check the internet/network connection</label>
+<label class="option"><input type="radio" name="q4" value="c"> Replace the CPU</label>
+<label class="option"><input type="radio" name="q4" value="d"> Write a new website</label>
+</div>
+
+<div class="q" data-cat="tech">
+<p>5. Which password is the safest?</p>
+<label class="option"><input type="radio" name="q5" value="a"> 123456</label>
+<label class="option"><input type="radio" name="q5" value="b"> password</label>
+<label class="option"><input type="radio" name="q5" value="c"> myname</label>
+<label class="option"><input type="radio" name="q5" value="d"> T9!river#Moon27</label>
+</div>
+
+<div class="q" data-cat="tech">
+<p>6. You receive a strange link from someone you do not know. What is the best action?</p>
+<label class="option"><input type="radio" name="q6" value="a"> Open it immediately</label>
+<label class="option"><input type="radio" name="q6" value="b"> Send your password</label>
+<label class="option"><input type="radio" name="q6" value="c"> Do not open it; ask a trusted adult/teacher if unsure</label>
+<label class="option"><input type="radio" name="q6" value="d"> Forward it to everyone</label>
+</div>
+</section>
+
+<section class="section">
+<h2>🧠 Part 2 — Logic & Problem Solving</h2>
+
+<div class="q" data-cat="logic">
+<p>7. What number comes next? 2, 4, 8, 16, ___</p>
+<label class="option"><input type="radio" name="q7" value="a"> 18</label>
+<label class="option"><input type="radio" name="q7" value="b"> 24</label>
+<label class="option"><input type="radio" name="q7" value="c"> 32</label>
+<label class="option"><input type="radio" name="q7" value="d"> 30</label>
+</div>
+
+<div class="q" data-cat="logic">
+<p>8. A robot faces North. It turns right, then right again. Which direction is it facing?</p>
+<label class="option"><input type="radio" name="q8" value="a"> North</label>
+<label class="option"><input type="radio" name="q8" value="b"> South</label>
+<label class="option"><input type="radio" name="q8" value="c"> East</label>
+<label class="option"><input type="radio" name="q8" value="d"> West</label>
+</div>
+
+<div class="q" data-cat="logic">
+<p>9. A game gives 10 points for every star. You collect 7 stars. What is your score?</p>
+<label class="option"><input type="radio" name="q9" value="a"> 17</label>
+<label class="option"><input type="radio" name="q9" value="b"> 60</label>
+<label class="option"><input type="radio" name="q9" value="c"> 70</label>
+<label class="option"><input type="radio" name="q9" value="d"> 700</label>
+</div>
+
+<div class="q" data-cat="logic">
+<p>10. You need to find the largest number in a list. Which idea is best?</p>
+<label class="option"><input type="radio" name="q10" value="a"> Compare the numbers and remember the largest seen</label>
+<label class="option"><input type="radio" name="q10" value="b"> Delete every number</label>
+<label class="option"><input type="radio" name="q10" value="c"> Change every number to zero</label>
+<label class="option"><input type="radio" name="q10" value="d"> Restart the computer</label>
+</div>
+
+<div class="q">
+<p>11. Explain how you would teach a robot to make a sandwich. Write clear steps.</p>
+<textarea name="open1" placeholder="Write your algorithm here..."></textarea>
+</div>
+</section>
+
+<section class="section">
+<h2>🐍 Part 3 — Python</h2>
+
+<div class="q" data-cat="python">
+<p>12. What is a variable?</p>
+<label class="option"><input type="radio" name="q12" value="a"> A place/name used to store a value</label>
+<label class="option"><input type="radio" name="q12" value="b"> A computer screen</label>
+<label class="option"><input type="radio" name="q12" value="c"> An error</label>
+<label class="option"><input type="radio" name="q12" value="d"> A website</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>13. What does this print?</p>
+<pre>x = 5
+y = 3
+print(x + y)</pre>
+<label class="option"><input type="radio" name="q13" value="a"> 53</label>
+<label class="option"><input type="radio" name="q13" value="b"> 8</label>
+<label class="option"><input type="radio" name="q13" value="c"> x + y</label>
+<label class="option"><input type="radio" name="q13" value="d"> 2</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>14. What does an <code>if</code> statement do?</p>
+<label class="option"><input type="radio" name="q14" value="a"> Repeats forever</label>
+<label class="option"><input type="radio" name="q14" value="b"> Makes a decision based on a condition</label>
+<label class="option"><input type="radio" name="q14" value="c"> Deletes Python</label>
+<label class="option"><input type="radio" name="q14" value="d"> Creates hardware</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>15. What will this program print?</p>
+<pre>score = 8
+
+if score >= 5:
+    print("Great!")
+else:
+    print("Try again!")</pre>
+<label class="option"><input type="radio" name="q15" value="a"> Try again!</label>
+<label class="option"><input type="radio" name="q15" value="b"> Great!</label>
+<label class="option"><input type="radio" name="q15" value="c"> 8</label>
+<label class="option"><input type="radio" name="q15" value="d"> Error</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>16. Which loop is useful for repeating something for each item in a list?</p>
+<label class="option"><input type="radio" name="q16" value="a"> for</label>
+<label class="option"><input type="radio" name="q16" value="b"> print</label>
+<label class="option"><input type="radio" name="q16" value="c"> input</label>
+<label class="option"><input type="radio" name="q16" value="d"> import</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>17. What does this print?</p>
+<pre>for i in range(3):
+    print(i)</pre>
+<label class="option"><input type="radio" name="q17" value="a"> 1, 2, 3</label>
+<label class="option"><input type="radio" name="q17" value="b"> 0, 1, 2</label>
+<label class="option"><input type="radio" name="q17" value="c"> 0, 1, 2, 3</label>
+<label class="option"><input type="radio" name="q17" value="d"> 3 only</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>18. Why is this function better than writing the same calculation many times?</p>
+<pre>def final_price(price, discount):
+    return price - (price * discount / 100)</pre>
+<label class="option"><input type="radio" name="q18" value="a"> It creates reusable code and makes changes easier</label>
+<label class="option"><input type="radio" name="q18" value="b"> It makes the computer screen faster</label>
+<label class="option"><input type="radio" name="q18" value="c"> Functions can only be used once</label>
+<label class="option"><input type="radio" name="q18" value="d"> It automatically connects to the internet</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>19. What is the value of <code>numbers[1]</code>?</p>
+<pre>numbers = [10, 20, 30, 40]</pre>
+<label class="option"><input type="radio" name="q19" value="a"> 10</label>
+<label class="option"><input type="radio" name="q19" value="b"> 20</label>
+<label class="option"><input type="radio" name="q19" value="c"> 30</label>
+<label class="option"><input type="radio" name="q19" value="d"> 40</label>
+</div>
+
+<div class="q" data-cat="python">
+<p>20. Find the bug:</p>
+<pre>age = 12
+
+if age >= 10
+    print("Welcome")</pre>
+<label class="option"><input type="radio" name="q20" value="a"> age cannot be 12</label>
+<label class="option"><input type="radio" name="q20" value="b"> Missing : after the condition</label>
+<label class="option"><input type="radio" name="q20" value="c"> print cannot be used</label>
+<label class="option"><input type="radio" name="q20" value="d"> There is no bug</label>
+</div>
+</section>
+
+<section class="section">
+<h2>🏆 Part 4 — Young Programmer Challenge</h2>
+
+<div class="q" data-cat="challenge">
+<p>21. What will the final value of <code>total</code> be?</p>
+<pre>total = 0
+
+for number in [2, 4, 6]:
+    total = total + number
+
+print(total)</pre>
+<label class="option"><input type="radio" name="q21" value="a"> 6</label>
+<label class="option"><input type="radio" name="q21" value="b"> 10</label>
+<label class="option"><input type="radio" name="q21" value="c"> 12</label>
+<label class="option"><input type="radio" name="q21" value="d"> 24</label>
+</div>
+
+<div class="q" data-cat="challenge">
+<p>22. What will this program print?</p>
+<pre>numbers = [3, 7, 2, 9, 4]
+largest = numbers[0]
+
+for number in numbers:
+    if number > largest:
+        largest = number
+
+print(largest)</pre>
+<label class="option"><input type="radio" name="q22" value="a"> 3</label>
+<label class="option"><input type="radio" name="q22" value="b"> 4</label>
+<label class="option"><input type="radio" name="q22" value="c"> 7</label>
+<label class="option"><input type="radio" name="q22" value="d"> 9</label>
+</div>
+
+<div class="q" data-cat="challenge">
+<p>23. Which condition checks whether <code>number</code> is even?</p>
+<label class="option"><input type="radio" name="q23" value="a"> number / 2</label>
+<label class="option"><input type="radio" name="q23" value="b"> number % 2 == 0</label>
+<label class="option"><input type="radio" name="q23" value="c"> number == 2</label>
+<label class="option"><input type="radio" name="q23" value="d"> number + 2</label>
+</div>
+
+<div class="q">
+<p>⭐ Bonus Reasoning: A program works correctly for 10 users but becomes very slow with 10,000 users. What would you investigate first?</p>
+<textarea name="bonus1" placeholder="There is no single perfect answer. Explain how you would investigate the problem."></textarea>
+</div>
+
+<div class="q">
+<p>⭐ Bonus Design: You are building a login system. What information should NEVER be shown to another user? What would you do to make the system safer?</p>
+<textarea name="bonus2" placeholder="Explain your ideas about passwords, private information, permissions, or other safety ideas."></textarea>
+</div>
+
+<div class="q">
+<p>24. Write Python code that asks for a name and prints: <b>Hello, NAME!</b></p>
+<textarea name="open2" placeholder='Example idea: use input() and print()...'></textarea>
+</div>
+
+<div class="q">
+<p>25. ⭐ Final Challenge: Design a simple game.</p>
+<div class="small">Explain: What is the goal? What variables do you need? What decisions (if statements) are needed? What repeats (loops)? You can also write Python code.</div>
+<textarea name="open3" style="min-height:180px" placeholder="Describe or code your game here..."></textarea>
+</div>
+</section>
+
+<section class="section">
+<h2>📥 Finish</h2>
+<p class="sub">When finished, download all answers and send the result file to the teacher.</p>
+<button type="button" onclick="downloadResults()">Download Answers</button>
+</section>
+</form>
+
+<footer>Technology & Python Skills Assessment</footer>
+</div>
+
+<script>
+const answers={
+ q1:"b",q2:"a",q3:"c",q4:"b",q5:"d",q6:"c",
+ q7:"c",q8:"b",q9:"c",q10:"a",
+ q12:"a",q13:"b",q14:"b",q15:"b",q16:"a",q17:"b",q18:"a",q19:"b",q20:"b",
+ q21:"c",q22:"d",q23:"b"
+};
+const categories={
+ tech:["q1","q2","q3","q4","q5","q6"],
+ logic:["q7","q8","q9","q10"],
+ python:["q12","q13","q14","q15","q16","q17","q18","q19","q20"],
+ challenge:["q21","q22","q23"]
+};
+function selected(name){
+ const e=document.querySelector('input[name="'+name+'"]:checked');
+ return e?e.value:null;
+}
+function gradeQuiz(){
+ let score=0;
+ Object.keys(answers).forEach(q=>{if(selected(q)===answers[q])score++;});
+ const total=Object.keys(answers).length;
+ const pct=Math.round(score/total*100);
+ let message="";
+ if(pct>=90) message="Outstanding! Ready for a bigger programming challenge.";
+ else if(pct>=75) message="Very strong! Good foundation for more challenging Python projects.";
+ else if(pct>=60) message="Good work! A few topics should be strengthened before the next project.";
+ else message="Good start. Review the basics and keep practicing step by step.";
+ let boxes="";
+ const labels={tech:"Technology",logic:"Logic",python:"Python",challenge:"Challenge"};
+ Object.keys(categories).forEach(cat=>{
+   let s=0; categories[cat].forEach(q=>{if(selected(q)===answers[q])s++;});
+   boxes+=`<div class="box"><b>${labels[cat]}</b><br>${s}/${categories[cat].length}</div>`;
+ });
+ document.getElementById("result").innerHTML=
+ `<div class="score">${score}/${total} (${pct}%)</div>
+  <p><b>${message}</b></p>
+  <div class="breakdown">${boxes}</div>
+  <p class="small">Teacher: use the automatic score only as one part of the assessment. Review the Technology Profile carefully to identify depth in Web, Game Development, Cybersecurity, AI, Software Development, Hardware and Networks. Pay special attention to what the student has actually built, what they research independently, how they debug problems, how accurately they explain concepts, and which areas show curiosity but limited knowledge. Review the open and bonus questions separately.</p>`;
+ document.getElementById("result").style.display="block";
+ document.getElementById("downloadBtn").style.display="inline-block";
+ document.getElementById("result").scrollIntoView({behavior:"smooth"});
+}
+
+function getLabelForQuestion(qname){
+  const checked=document.querySelector('input[name="'+qname+'"]:checked');
+  if(!checked) return "Not answered";
+  const label=checked.closest("label");
+  return label ? label.textContent.trim() : checked.value;
+}
+
+function getQuestionTextForInput(el){
+  const q=el.closest(".q");
+  if(!q) return el.name;
+  const p=q.querySelector("p");
+  return p ? p.textContent.trim() : el.name;
+}
+
+function buildFullResults(){
+  let lines=[];
+  lines.push("TECHNOLOGY KNOWLEDGE ASSESSMENT — STUDENT ANSWERS");
+  lines.push("=================================================");
+  lines.push("Completed: "+new Date().toLocaleString());
+  lines.push("");
+
+  lines.push("MULTIPLE-CHOICE RESPONSES");
+  lines.push("-------------------------");
+  Object.keys(answers).forEach(qname=>{
+    const input=document.querySelector('input[name="'+qname+'"]');
+    const question=getQuestionTextForInput(input);
+    const choice=getLabelForQuestion(qname);
+    lines.push(question);
+    lines.push("Answer: "+choice);
+    lines.push("");
+  });
+
+  lines.push("WRITTEN / PROFILE RESPONSES");
+  lines.push("---------------------------");
+  document.querySelectorAll("textarea").forEach(area=>{
+    const question=getQuestionTextForInput(area);
+    lines.push(question);
+    lines.push(area.value.trim() || "Not answered");
+    lines.push("");
+  });
+
+  return lines.join("\n");
+}
+
+function downloadResults(){
+  const content=buildFullResults();
+  const blob=new Blob([content],{type:"text/plain;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  const stamp=new Date().toISOString().slice(0,10);
+  a.href=url;
+  a.download="technology_assessment_answers_"+stamp+".txt";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+</script>
+</body>
+</html>
